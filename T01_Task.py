@@ -20,7 +20,8 @@ for pizzas and drinks like coke,sprite etc where i provided multiple rates:the m
 same goes for fries but have large and small respectively , 
 bottled water & toppings have their own prices per piece/topping,
 provide a decent looking menu template for the menu i provided when customer asks for the menu.
-
+When user say they want any kind of pizza do remind them that they can shoose toppings and stuff
+when toppings are mentioned along with the pizza account the cost for the total amount
 '''
 
 menu={"Pizza":{
@@ -35,7 +36,7 @@ menu={"Pizza":{
 		'mushrooms' :1.50 ,
 		'sausage' :3.00 ,
 		'canadian bacon': 3.50 ,
-		"AI sauce" :1.50 ,
+		"sauce" :1.50 ,
 		"peppers": 1.00 ,
 		},
 	"Drinks": {
