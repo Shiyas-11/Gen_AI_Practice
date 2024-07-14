@@ -72,13 +72,13 @@ for message in st.session_state.messages:
 inputmsg="Type here"
 response=''
 if item:=st.chat_input(inputmsg):
-	with st.chat_message("User"):
+	with st.chat_message("👤"):
 		st.markdown(item)
 	st.session_state.messages.append({"role":"user","message":item})
 	response=chain.invoke({"chats":st.session_state.messages,"menu":menu,"item":item})
 
 if response:
-	with st.chat_message("ai"):
+	with st.chat_message("ai",avatar="🤖"):
 		st.markdown(response)
 	st.session_state.messages.append({"role":"ai","message":response})
 	response=''
