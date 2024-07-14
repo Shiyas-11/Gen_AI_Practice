@@ -74,17 +74,15 @@ response=''
 if item:=st.chat_input(inputmsg):
 	with st.chat_message("User"):
 		st.markdown(item)
-	chats.append(HumanMessage(content=str(item)))
 	st.session_state.messages.append({"role":"user","message":item})
-	response=chain.invoke({"chats":chats,"menu":menu,"item":item})
+	response=chain.invoke({"chats":st.session_state.messages,"menu":menu,"item":item})
 
 if response:
 	with st.chat_message("ai"):
 		st.markdown(response)
-	chats.append(AIMessage(content=str(response)))
 	st.session_state.messages.append({"role":"ai","message":response})
 	response=''
-print(chats)
+
 
 
 
