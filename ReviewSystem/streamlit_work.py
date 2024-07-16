@@ -25,9 +25,9 @@ if button:
 		st.write(out["Rating"]["review"])
 		st.write(out["Mail"][email])
 
-with open("mails.json","w") as E:
+with open("mails.json","a") as E:
 	dump(Emails,E,indent=4)
-with open("reviews.json","w") as R:
+with open("reviews.json","a") as R:
 	dump(AI_sorted,R,indent=4)
 
 
