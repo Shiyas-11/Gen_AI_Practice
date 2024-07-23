@@ -6,10 +6,8 @@ def Analyzer(name,email,rev,Emailchain,Reviewchain):
 	resp["name"]=name
 	resp["email"]=email
 	response=Reviewchain.invoke({"review":rev})
-	
-	print(response)
 	resp["review"]=response
-	mail=Emailchain.invoke({"review":rev,"details":resp})
+	mail=Emailchain.invoke({"review":rev,"details":rev,"name":resp["name"],"email":resp["email"]})
 	mails[email]=mail
 
 	return {"Rating":resp,"Mail":mails}

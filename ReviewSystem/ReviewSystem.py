@@ -16,13 +16,16 @@ out=StrOutputParser()
 
 #prompt
 rev_template='''You are a Bot that Accepts a review {review} about a product;
+				Read the review thorougly and decide on Whether the review is a positive or negative one.
 				You as an AI you are to classify these as Positive or Negative review.
 				Review stricly should constain only single word value of .
 				whether the review is positive or negative.
 				'''
 email_template='''
 				You are an AI that is going to help me write emails.
-				I will provide you a review {review} and some details {details}.
+				I will provide you a review {review},
+				 (this is a dictionary that has {name} , {email} and review text ) and 
+				Nature of the review is provided via another input {details}.
 				Your objective is to draft emails depending on whether the review is positive or negative.
 				For positive review,  a thank you email to customer and also, 
 				recommend a new product for them to try.
