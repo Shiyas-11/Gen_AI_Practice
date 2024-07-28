@@ -1,0 +1,14 @@
+.query{
+	padding-left: 4px;
+	
+	border: solid 2px rgb(135, 226, 226);
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+.radio{
+
+}
+
+#ai{
+	border: solid 2px rgb(186, 149, 39);
+}
