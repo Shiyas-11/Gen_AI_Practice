@@ -1,14 +1,85 @@
-.query{
-	padding-left: 4px;
+
+
+.icon{
+	display: flex;
+	font-size:150%;
+	margin-right: 5px;
+	width:10%;
+	justify-content: center;
+	vertical-align: middle;
+}
+.text{
+	padding-right: 5px;
+	width:80%;
+	text-align: left;
+	vertical-align: middle;
+}
+
+
+
+.aquery{
+	display: flex;
+	border: solid 2px rgb(120, 79, 9);
+	border-radius: 5px;
+	margin-bottom: 10px;
+	background:linear-gradient(rgb(252, 195, 81),rgb(207, 195, 161)) ;
+	width: fit-content;
+	margin-right: auto;
+	max-width: 90%;
+}
+#ai{
 	
+	color: black;
+}
+#aitext{
+
+	text-align: left;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+}
+#aicon{
+	margin: 10px;
+}
+
+.hquery{
+	align-items: right;
+	display: flex;
 	border: solid 2px rgb(135, 226, 226);
 	border-radius: 5px;
 	margin-bottom: 10px;
+	margin-left: auto;
+	max-width: 90%;
+	background:linear-gradient(rgb(4, 62, 62),rgb(3, 120, 120)) ;
+	width:fit-content;
+	padding-right: 10px;
+	padding-left: 10px;
 }
-.radio{
+#human{
+	border: solid 2px rgb(120, 204, 200);
+}
+#htext{
+	text-align: right;
+	margin-right: 0%;
+	/* border: solid 2px rgb(226, 135, 152); */
 
 }
+#hicon{
+	margin-left: 10px;
+	margin-right: 0px;
+	/* border: solid 2px rgb(226, 135, 152); */
+}
 
-#ai{
-	border: solid 2px rgb(186, 149, 39);
+.stTextInput input {
+	width:auto;
+	border: 2px solid  rgb(120, 79, 9);
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 16px;
+	color: white;
+	transition: border-color 0.3s, box-shadow 0.3s;
+	margin: auto;
+}
+.stTextInput input:focus {
+	border-color:  rgb(120, 79, 9);
+	box-shadow: 0 0 5px  rgb(120, 79, 9);
 }
