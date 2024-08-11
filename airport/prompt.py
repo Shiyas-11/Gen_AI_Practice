@@ -20,9 +20,9 @@ If the user has not provided the Source City, destination city, or travel class,
 
 User Input:
 
-Source City: {chats}[?].content.extract("Source City:(.*?)[\\n\\r|\\r|\\n| ]")|first
-Destination City: {chats}[?].content.extract("Destination City:(.*?)[\\n\\r|\\r|\\n| ]")|first
-Travel Class: {chats}[?].content.extract("Travel Class:(.*?)[\\n\\r|\\r|\\n| ]")|first
+Source City: {chats}[?].content.extract("Source City:(.*?)[\\n\\r|\\r|\\n| ]")|first,
+Destination City: {chats}[?].content.extract("Destination City:(.*?)[\\n\\r|\\r|\\n| ]")|first,
+Travel Class: {chats}[?].content.extract("Travel Class:(.*?)[\\n\\r|\\r|\\n| ]")|first,
 
 Note: If the above values are not present in the chat history, prompt the user to provide missing information.
 
