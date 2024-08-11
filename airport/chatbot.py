@@ -1,7 +1,7 @@
 import streamlit as st
-from prompt import chain,info_input,sprompt,dprompt,tprompt
+from prompt import chain
 from streamlit import markdown
-
+from langchain_core.messages import HumanMessage,AIMessage
 
 
 
@@ -15,7 +15,7 @@ with open("static/style.css","r") as f:
 	css=f"<style>{f.read()}</style>"
 	st.markdown(css,unsafe_allow_html=True)		
 
-
+chats=[]
 for message in st.session_state.messages:
 	icon="🤖" if message["role"]=="ai" else "👤"
 	align="htext" if message["role"]!="ai" else "aitext"
@@ -27,19 +27,6 @@ for message in st.session_state.messages:
 		div=f'''<div class="hquery" id="{message["role"]}"><div class="text" id="{align}">{message["message"].capitalize()}</div>{divicon}</div>'''
 	st.markdown(div,unsafe_allow_html=True)
 
-try:
-	print(sc)
-except NameError:
-	sc=''
-try:
-	print(dc)
-except NameError:
-	dc=''
-try:
-	print(tc)
-except NameError:
-	tc=''
-
 
 inputmsg="Type here"
 response=''
@@ -48,10 +35,7 @@ if query:=st.chat_input(inputmsg):
 	div=f'''<div class="hquery" id="human"><div class="text" id="htext">{query.capitalize()}</div>{divicon}<div>'''
 	st.markdown(div,unsafe_allow_html=True)
 	st.session_state.messages.append({"role":"user","message":query})
-	response=chain.invoke({"query":query,"Source City":sc,"Destination City":dc,"travel class":tc})
-	if sc=="":	sc=info_input(sprompt,query)
-	if dc=="":	dc=info_input(dprompt,query)
-	if tc=="":	tc=info_input(tprompt,query)
+	response=chain.invoke({"chats":st.session_state.messages,"query":query})
 
 if response:
 	divicon=f'''<div class="icon" id="aicon">🤖</div>'''
@@ -60,6 +44,8 @@ if response:
 	st.session_state.messages.append({"role":"ai","message":response})
 	response=''
 
+
+	
 
 
 	
